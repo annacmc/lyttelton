@@ -15,7 +15,7 @@ Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-com
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned.
 
-Lyttelton is based on Underscores https://meander.co.nz/lyttelton/, (C) 2012-2020 Automattic, Inc.
+Lyttelton is based on Underscores https://underscores.me/, (C) 2012-2020 Automattic, Inc.
 Underscores is distributed under the terms of the GNU GPL v2 or later.
 
 Normalizing styles have been helped along thanks to the fine work of
@@ -47,6 +47,8 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 # Utilities
 	- Accessibility
 	- Alignments
+# Bootstrap
+	- Import Bootstrap modules
 
 --------------------------------------------------------------*/
 
@@ -100,3 +102,10 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 /* Alignments
 --------------------------------------------- */
 @import "utilities/alignments";
+
+/* Bootstrap
+----------------------------------------------- */
+// Include Bootstrap
+
+@import "../node_modules/bootstrap/scss/bootstrap";
+
