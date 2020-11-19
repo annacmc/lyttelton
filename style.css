@@ -530,7 +530,7 @@ a {
 }
 
 a:visited {
-  color: #800080;
+  color: #ffffff;
 }
 
 a:hover, a:focus, a:active {
@@ -731,6 +731,19 @@ textarea {
   -webkit-box-flex: 1;
       -ms-flex: 1 0 50%;
           flex: 1 0 50%;
+}
+
+.site-branding h1 a {
+  font-size: 26px;
+}
+
+.site-branding h1, .site-branding p {
+  display: inline;
+}
+
+.site-branding p {
+  font-size: 18px;
+  font-weight: 100;
 }
 
 /* Posts and pages
