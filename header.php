@@ -27,7 +27,12 @@
 	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'lyttelton' ); ?></a>
 
 	<header id="masthead" class="site-header">
-		<div class="site-branding">
+		
+		<!-- Image and text -->
+		<nav id="site-tob-bar" class="navbar navbar-dark bg-dark">
+
+		<div class="site-branding navbar-brand">
+
 			<?php
 			the_custom_logo();
 			if ( is_front_page() && is_home() ) :
@@ -45,7 +50,7 @@
 				<p class="site-description"><?php echo $lyttelton_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
 			<?php endif; ?>
 		</div><!-- .site-branding -->
-
+		</nav>
 
 		<nav id="site-navigation" class="main-navigation navbar navbar-expand-lg navbar-light bg-light">
 			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'lyttelton' ); ?></button>
