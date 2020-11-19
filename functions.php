@@ -94,10 +94,10 @@ if ( ! function_exists( 'lyttelton_setup' ) ) :
 		add_theme_support(
 			'custom-logo',
 			array(
-				'height'      => 250,
-				'width'       => 250,
+				'height'      => 50,
+				'width'       => 350,
 				'flex-width'  => true,
-				'flex-height' => true,
+				'flex-height' => false,
 			)
 		);
 	}
