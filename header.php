@@ -29,19 +29,19 @@
 	<header id="masthead" class="site-header">
 		
 		<!-- Image and text -->
-		<nav id="site-tob-bar" class="navbar navbar-dark bg-dark">
+		<nav id="site-top-bar" class="navbar navbar-dark bg-dark">
 
-		<div class="site-branding navbar-brand">
+		<div class="site-branding">
 
-			<?php
+			<?php 
 			the_custom_logo();
 			if ( is_front_page() && is_home() ) :
 				?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+				<h1 class="site-title"><a class ="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 				<?php
 			else :
 				?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+				<p class="site-title"><a class ="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
 				<?php
 			endif;
 			$lyttelton_description = get_bloginfo( 'description', 'display' );
@@ -50,6 +50,14 @@
 				<p class="site-description"><?php echo $lyttelton_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
 			<?php endif; ?>
 		</div><!-- .site-branding -->
+		<ul class = "nav">
+			<li class = "nav-item"> Item 1 </li>
+			<li class = "nav-item"> Item 2 </li>
+			<li class = "nav-item"> Item 3 </li>
+			<li class = "nav-item"> Item 4 </li>
+		</nav><!-- #social-menu -->
+
+
 		</nav>
 
 		<nav id="site-navigation" class="main-navigation navbar navbar-expand-lg navbar-light bg-light">
