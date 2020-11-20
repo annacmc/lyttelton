@@ -16,6 +16,7 @@
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<link rel="profile" href="https://gmpg.org/xfn/11">
+	<link rel="stylsesheet" href="/css/all.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 	<?php wp_head(); ?>
@@ -50,12 +51,23 @@
 				<p class="site-description"><?php echo $lyttelton_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
 			<?php endif; ?>
 		</div><!-- .site-branding -->
-		<ul class = "nav">
-			<li class = "nav-item"> Item 1 </li>
-			<li class = "nav-item"> Item 2 </li>
-			<li class = "nav-item"> Item 3 </li>
-			<li class = "nav-item"> Item 4 </li>
-		</nav><!-- #social-menu -->
+		<?php
+			wp_nav_menu(
+				array(
+					'theme_location' => 'menu-2',
+					'menu_id'        => 'social-menu',
+					'depth'           => 1,
+					'container'       => 'ul',					
+					'container_class' => 'collapse navbar-collapse',
+					'menu_class'      => 'nav menu-social ',
+					'fallback_cb'     => 'WP_Bootstrap_Navwalker::fallback',
+					'walker'          => new WP_Bootstrap_Navwalker(),
+				)
+			);
+			?>
+			<!-- #social-menu -->
+	
+				</nav>
 
 
 		</nav>
@@ -78,4 +90,5 @@
 			);
 			?>
 		</nav><!-- #site-navigation -->
+		<i class="fas fa-camera"></i>camera
 	</header><!-- #masthead -->
