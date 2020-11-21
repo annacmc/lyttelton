@@ -16,7 +16,7 @@
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<link rel="profile" href="https://gmpg.org/xfn/11">
-	<link rel="stylsesheet" href="/css/all.css">
+	<script src="https://kit.fontawesome.com/a713b736e5.js" crossorigin="anonymous"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 	<?php wp_head(); ?>
@@ -90,5 +90,8 @@
 			);
 			?>
 		</nav><!-- #site-navigation -->
-		<i class="fas fa-camera"></i>camera
+		<i class="fas fa-user"></i> <!-- uses solid style -->
+  <i class="far fa-user"></i> <!-- uses regular style -->
+  <!--brand icon-->
+  <i class="fab fa-github-square"></i> <!-- uses brands style -->
 	</header><!-- #masthead -->
