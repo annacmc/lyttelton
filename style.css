@@ -735,6 +735,7 @@ textarea {
 
 .site-branding h1 a {
   font-size: 26px;
+  font-weight: 400;
 }
 
 .site-branding h1, .site-branding p {
@@ -743,7 +744,128 @@ textarea {
 
 .site-branding p {
   font-size: 18px;
+}
+
+.site-branding .site-description {
   font-weight: 100;
+}
+
+/* Social Media Menu */
+.menu-social li a::before {
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+}
+
+.menu-social li a[href*="facebook.com"]::before {
+  font-family: "Font Awesome 5 Brands";
+  content: "\f09a";
+}
+
+.menu-social li a[href*="github.com"]::before {
+  font-family: "Font Awesome 5 Brands";
+  content: '\f09b';
+}
+
+.menu-social li a[href*="instagram.com"]::before {
+  font-family: "Font Awesome 5 Brands";
+  content: '\f16d';
+}
+
+.menu-social li a[href*="jsfiddle.com"]::before {
+  font-family: "Font Awesome 5 Brands";
+  content: '\f1cc';
+}
+
+.menu-social li a[href*="linkedin.com"]::before {
+  font-family: "Font Awesome 5 Brands";
+  content: '\f0e1';
+}
+
+.menu-social li a[href*="pinterest.com"]::before {
+  font-family: "Font Awesome 5 Brands";
+  content: '\f0d2';
+}
+
+.menu-social li a[href*="reddit.com"]::before {
+  font-family: "Font Awesome 5 Brands";
+  content: '\f1a1';
+}
+
+.menu-social li a[href*="soundcloud.com"]::before {
+  font-family: "Font Awesome 5 Brands";
+  content: '\f1be';
+}
+
+.menu-social li a[href*="stackoverflow.com"]::before {
+  font-family: "Font Awesome 5 Brands";
+  content: '\f16c';
+}
+
+.menu-social li a[href*="tumblr.com"]::before {
+  font-family: "Font Awesome 5 Brands";
+  content: '\f173';
+}
+
+.menu-social li a[href*="twitter.com"]::before {
+  font-family: "Font Awesome 5 Brands";
+  content: '\f099';
+}
+
+.menu-social li a[href*="vimeo.com"]::before {
+  font-family: "Font Awesome 5 Brands";
+  content: '\f194';
+}
+
+.menu-social li a[href*="vine.co"]::before {
+  font-family: "Font Awesome 5 Brands";
+  content: '\f1ca';
+}
+
+.menu-social li a[href*="yelp.com"]::before {
+  font-family: "Font Awesome 5 Brands";
+  content: '\f1e9';
+}
+
+.menu-social li a[href*="youtube.com"]::before {
+  font-family: "Font Awesome 5 Brands";
+  content: '\f167';
+}
+
+.menu-social li a[href*="wordpress.com"]::before {
+  font-family: "Font Awesome 5 Brands";
+  content: '\f19a';
+}
+
+.menu-social li a[href*="wordpress.org"]::before {
+  font-family: "Font Awesome 5 Brands";
+  content: '\f19a';
+}
+
+.menu-social li span {
+  display: none;
+}
+
+#social-menu a.nav-link {
+  padding: 0px;
+}
+
+.menu-social li a:before {
+  display: inline-block;
+  vertical-align: bottom;
+  padding: 0.5rem 0.5rem;
+  font-size: 1.6rem;
+  -webkit-font-smoothing: antialiased;
+}
+
+.menu-social li a {
+  color: #c7c7c7;
+}
+
+.menu-social li:hover > a {
+  color: #fff;
 }
 
 /* Posts and pages

@@ -29,6 +29,9 @@
 </div><!-- #page -->
 
 <?php wp_footer(); ?>
-
+<script
+  type="text/javascript"
+  src="https://use.fontawesome.com/releases/v5.15.1/js/conflict-detection.js">
+</script>
 </body>
 </html>

@@ -16,6 +16,7 @@
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<link rel="profile" href="https://gmpg.org/xfn/11">
+	<script src="https://kit.fontawesome.com/a713b736e5.js" crossorigin="anonymous"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 	<?php wp_head(); ?>
@@ -29,19 +30,19 @@
 	<header id="masthead" class="site-header">
 		
 		<!-- Image and text -->
-		<nav id="site-tob-bar" class="navbar navbar-dark bg-dark">
+		<nav id="site-top-bar" class="navbar navbar-dark bg-dark">
 
-		<div class="site-branding navbar-brand">
+		<div class="site-branding">
 
-			<?php
+			<?php 
 			the_custom_logo();
 			if ( is_front_page() && is_home() ) :
 				?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+				<h1 class="site-title"><a class ="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 				<?php
 			else :
 				?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+				<p class="site-title"><a class ="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
 				<?php
 			endif;
 			$lyttelton_description = get_bloginfo( 'description', 'display' );
@@ -50,6 +51,25 @@
 				<p class="site-description"><?php echo $lyttelton_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
 			<?php endif; ?>
 		</div><!-- .site-branding -->
+		<?php
+			wp_nav_menu(
+				array(
+					'theme_location' => 'menu-2',
+					'menu_id'        => 'social-menu',
+					'depth'           => 1,
+					'container'       => 'ul',					
+					'container_class' => 'collapse navbar-collapse',
+					'menu_class'      => 'nav menu-social ',
+					'fallback_cb'     => 'WP_Bootstrap_Navwalker::fallback',
+					'walker'          => new WP_Bootstrap_Navwalker(),
+				)
+			);
+			?>
+			<!-- #social-menu -->
+	
+				</nav>
+
+
 		</nav>
 
 		<nav id="site-navigation" class="main-navigation navbar navbar-expand-lg navbar-light bg-light">
@@ -70,4 +90,8 @@
 			);
 			?>
 		</nav><!-- #site-navigation -->
+		<i class="fas fa-user"></i> <!-- uses solid style -->
+  <i class="far fa-user"></i> <!-- uses regular style -->
+  <!--brand icon-->
+  <i class="fab fa-github-square"></i> <!-- uses brands style -->
 	</header><!-- #masthead -->
