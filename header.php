@@ -89,9 +89,5 @@
 				)
 			);
 			?>
-		</nav><!-- #site-navigation -->
-		<i class="fas fa-user"></i> <!-- uses solid style -->
-  <i class="far fa-user"></i> <!-- uses regular style -->
-  <!--brand icon-->
-  <i class="fab fa-github-square"></i> <!-- uses brands style -->
+		</nav>
 	</header><!-- #masthead -->
