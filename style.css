@@ -50,6 +50,17 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 	- Import Bootstrap modules
 
 --------------------------------------------------------------*/
+/* Support for Full and Wide Width Blocks */
+.entry-content .alignfull {
+  margin-left: calc( -100vw / 2 + 100% / 2);
+  margin-right: calc( -100vw / 2 + 100% / 2);
+  max-width: 100vw;
+}
+
+.alignfull img, .alignfull {
+  width: 100vw;
+}
+
 /*--------------------------------------------------------------
 # Generic
 --------------------------------------------------------------*/
@@ -530,7 +541,7 @@ a {
 }
 
 a:visited {
-  color: #ffffff;
+  color: #4169e1;
 }
 
 a:hover, a:focus, a:active {

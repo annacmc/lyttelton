@@ -40,6 +40,13 @@ if ( ! function_exists( 'lyttelton_setup' ) ) :
 		 */
 		add_theme_support( 'title-tag' );
 
+		/**
+		 * Register support for Gutenberg wide images
+		 */
+		
+		add_theme_support( 'align-wide' );
+
+
 		/*
 		 * Enable support for Post Thumbnails on posts and pages.
 		 *
