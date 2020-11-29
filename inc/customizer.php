@@ -15,6 +15,33 @@ function lyttelton_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
 
+	/* 
+	* Add Lyttelton Theme Settings to Customizer
+	*/
+	   $wp_customize->add_section( 'lyttelton-settings', array(
+            'title'    => __( 'Theme Settings', 'lyttelton'),
+            'priority' => 110,
+    ) );
+ 
+    $wp_customize->add_setting( 'lyttelton', array(
+        'default'    => get_option( 'lyttelton-settings' ),
+        'type'       => 'option',
+        'capability' => 'manage_options',
+    ) );
+ 
+    $wp_customize->add_control( 'lyttelton', array(
+		'label'      => __( 'Header Style', 'lyttelton' ),
+		'description' => __( 'This is a custom header alignment selection.', 'lyttelton' ),
+		'section'    => 'lyttelton-settings',
+		'type' => 'radio',
+		'choices' => array(
+			'left' => __( 'Left Aligned' ),
+			'center' => __( 'Center Aligned' ),
+		  ),
+    ) );
+
+
+
 	if ( isset( $wp_customize->selective_refresh ) ) {
 		$wp_customize->selective_refresh->add_partial(
 			'blogname',
@@ -59,3 +86,4 @@ function lyttelton_customize_preview_js() {
 	wp_enqueue_script( 'lyttelton-customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), _S_VERSION, true );
 }
 add_action( 'customize_preview_init', 'lyttelton_customize_preview_js' );
+
