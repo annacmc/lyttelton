@@ -22,15 +22,39 @@ function lyttelton_customize_register( $wp_customize ) {
             'title'    => __( 'Theme Settings', 'lyttelton'),
             'priority' => 110,
     ) );
+ /* 
+	* add header align setting
+	*/
+    $wp_customize->add_setting( 'header-align', array(
+        'default'    => get_theme_mod( 'header-align' ),
+        'type'       => 'theme_mod',
+        'capability' => 'edit_theme_options',
+	) );
+
+	 /* 
+	* add header style setting
+	*/
+    $wp_customize->add_setting( 'header-style', array(
+        'default'    => get_theme_mod( 'header-style' ),
+        'type'       => 'theme_mod',
+        'capability' => 'edit_theme_options',
+	) );
+
+		 /* 
+	* add primary color style setting
+	*/
+    $wp_customize->add_setting( 'primary-color', array(
+        'default'    => get_theme_mod( 'primary-color' ),
+        'type'       => 'theme_mod',
+        'capability' => 'edit_theme_options',
+	) );
+	
+	 /* 
+	* add header align control
+	*/
  
-    $wp_customize->add_setting( 'lyttelton', array(
-        'default'    => get_option( 'lyttelton-settings' ),
-        'type'       => 'option',
-        'capability' => 'manage_options',
-    ) );
- 
-    $wp_customize->add_control( 'lyttelton', array(
-		'label'      => __( 'Header Style', 'lyttelton' ),
+    $wp_customize->add_control( 'header-align', array(
+		'label'      => __( 'Header Layout', 'lyttelton' ),
 		'description' => __( 'This is a custom header alignment selection.', 'lyttelton' ),
 		'section'    => 'lyttelton-settings',
 		'type' => 'radio',
@@ -38,8 +62,37 @@ function lyttelton_customize_register( $wp_customize ) {
 			'left' => __( 'Left Aligned' ),
 			'center' => __( 'Center Aligned' ),
 		  ),
-    ) );
+	) );
+	
+		 /* 
+	* add header style control
+	*/
+ 
+    $wp_customize->add_control( 'header-style', array(
+		'label'      => __( 'Header Style', 'lyttelton' ),
+		'description' => __( 'This is a custom header alignment selection.', 'lyttelton' ),
+		'section'    => 'lyttelton-settings',
+		'type' => 'radio',
+		'choices' => array(
+			'light' => __( 'Light Header' ),
+			'dark' => __( 'Dark Header' ),
+		  ),
+	) );
+	
+	/* 
+	* add primary color picker
+	*/
 
+	$wp_customize->add_control( 
+		new WP_Customize_Color_Control( 
+		$wp_customize, 
+		'primary_color', 
+		array(
+			'label'      => __( 'Primary Color', 'lyttelton' ),
+			'section'    => 'lyttelton-settings',
+			'settings'   => 'primary-color',
+		) ) 
+	);
 
 
 	if ( isset( $wp_customize->selective_refresh ) ) {
@@ -86,4 +139,27 @@ function lyttelton_customize_preview_js() {
 	wp_enqueue_script( 'lyttelton-customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), _S_VERSION, true );
 }
 add_action( 'customize_preview_init', 'lyttelton_customize_preview_js' );
+
+
+/** 
+ * Adds header color styling into Head
+ */
+
+function lyttelton_customize_header_style()
+{
+	$header_style = get_theme_mod('header-style');
+	$primary_color = get_theme_mod('primary-color');
+	if ($header_style == "dark"){ 
+   	 ?>
+         <style type="text/css">
+			.primary-bg {
+				background-color:<?php echo $primary_color;?>;
+			}
+
+         </style>
+    <?php
+	}
+}
+add_action( 'wp_head', 'lyttelton_customize_header_style');
+
 
