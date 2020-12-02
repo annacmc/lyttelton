@@ -753,6 +753,11 @@ textarea {
   display: inline;
 }
 
+.site-branding.center a, .site-branding.center p{ 
+  display:block;
+  text-align:center;
+}
+
 .site-branding p {
   font-size: 18px;
 }
